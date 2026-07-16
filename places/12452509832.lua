@@ -4,6 +4,7 @@
 ]]
 
 repeat task.wait() until game:IsLoaded()
+repeat task.wait() until workspace:FindFirstChild("PotGuy")
 local require = require or function(...)
     return ...
 end
@@ -518,6 +519,11 @@ env(function()
     local Skin
 
     local function equipHammerSkin(skinArgument)
+        local existing = player:FindFirstChild("HammerSkin")
+        if existing then
+            existing:Destroy()
+        end
+
         local skin = hammerSkins:FindFirstChild(skinArgument)
         if skin then
             local skinClone = skin:Clone()
@@ -541,8 +547,9 @@ env(function()
             if enabled then
                 equipHammerSkin(Skin.CurrentOption[1])
             else
-                if player:FindFirstChild("HammerSkin") then
-                    player:FindFirstChild("HammerSkin"):Destroy()
+                local existing = player:FindFirstChild("HammerSkin")
+                if existing then
+                    existing:Destroy()
                 end
             end
         end,
@@ -554,9 +561,9 @@ env(function()
         CurrentOption = {"VIP"},
         MultipleOptions = false,
         Flag = "SetHammerSkin_SkinSelection",
-        Callback = function() 
+        Callback = function()
             if SetSkin.CurrentValue then
-                equipHammerSkin(Skin.CurrentOption[1])
+                --equipHammerSkin(Skin.CurrentOption[1]) dumb
             end
         end,
     })
