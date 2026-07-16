@@ -1,7 +1,9 @@
-                                                                                                                             --[[
+--[[
+
 █▀▀ █▀▀ ▀█▀ ▀█▀ █ █▄░█ █▀▀   █▀█ █░█ █▀▀ █▀█   █ ▀█▀   █▀█ █▀▀ █▀▄▀█ ▄▀█ █▀ ▀█▀ █▀▀ █▀█ █▀▀ █▀▄
 █▄█ ██▄ ░█░ ░█░ █ █░▀█ █▄█   █▄█ ▀▄▀ ██▄ █▀▄   █ ░█░   █▀▄ ██▄ █░▀░█ █▀█ ▄█ ░█░ ██▄ █▀▄ ██▄ █▄▀
-                                                                                                                               ]]
+
+]]
 
 repeat task.wait() until game:IsLoaded()
 repeat task.wait() until workspace:FindFirstChild("PotGuy")
