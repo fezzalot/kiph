@@ -4,12 +4,5 @@ end)
 if suc then
     loadstring(res)()
 else
-    if not shared.dontShowAgain then
-        game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "kliph",
-            Text = "Unsupported game! Find supported games in: https://discord.gg/QhKyfqSZTn",
-            Duration = 10
-        })
-        shared.dontShowAgain = true
-    end
+    loadstring("https://raw.githubusercontent.com/fezzalot/kiph/refs/heads/main/places/Universal/main.lua")()
 end
